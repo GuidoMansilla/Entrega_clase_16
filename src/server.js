@@ -2,6 +2,7 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import __dirname from './dirname.js';
 import productsRoutes from './routes/products.routes.js'
+import cartsRoutes from './routes/carts.routes.js'
 import viewsRoutes from './routes/views.routes.js'
 import mongoose from 'mongoose';
 import Handlebars from 'handlebars';
@@ -34,6 +35,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // Routes
 app.use('/api/products', productsRoutes);
+app.use('/api/carts', cartsRoutes);
 app.use('/', viewsRoutes);
 
 app.listen(3000, () => { console.log('Servidor escuchando en el puerto 3000') })
